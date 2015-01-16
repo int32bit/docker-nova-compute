@@ -7,7 +7,7 @@ RUN apt-get -y install nova-compute nova-network nova-api-metadata
 # remove the SQLite database file
 RUN rm -f /var/lib/nova/nova.sqlite
 
-EXPOSE 8773 8774 8775 6080
+EXPOSE 8775 67
 
 #copy nova config file
 COPY nova.conf /etc/nova/nova.conf
