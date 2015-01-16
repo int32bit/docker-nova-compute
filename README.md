@@ -7,7 +7,7 @@ Before you start a nova-compute instance, you need these services running:
 * mysql-server
 * rabbitmq
 * keystone
-* glance-api & glance-reregistry
+* glance-api & glance-registry
 * nova-api & nova-cert & nova-consoleauth & nova-scheduler & nova-conductor & nova-novncproxy
 
 Both [mysql-server](https://registry.hub.docker.com/_/mysql/) and [rabbitmq](https://registry.hub.docker.com/_/rabbitmq/) images
@@ -102,6 +102,11 @@ docker run -d\
 	--name node2 \
 	-h node2 \
 	krystism/openstack-nova-compute:latest
+```
+After all off the works above complate, you can run *nova service-list*, as expected, you can find that nova-compute service is up:
+```
+docker exec -t -i controller bash
+nova service-list
 ```
 # Possible Problem
 I do not recommand you write a script to run all the command above or use fig, because different services to start may take
